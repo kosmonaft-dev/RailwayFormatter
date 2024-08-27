@@ -29,10 +29,11 @@ class RailwayFormatter implements FormatterInterface
 
     /**
      * @param LogRecord[] $records
-     * @return string[]
+     * @return string
      */
-    public function formatBatch(array $records): array
+    public function formatBatch(array $records): string
     {
-        return array_map([$this, 'format'], $records);
+        $logs = array_map([$this, 'format'], $records);
+        return implode(PHP_EOL, $logs);
     }
 }
