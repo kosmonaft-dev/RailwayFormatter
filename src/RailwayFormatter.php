@@ -10,7 +10,7 @@ class RailwayFormatter implements FormatterInterface
 
     /**
      * @param LogRecord $record
-     * @return mixed
+     * @return string
      */
     public function format(LogRecord $record): string
     {
@@ -28,11 +28,11 @@ class RailwayFormatter implements FormatterInterface
     }
 
     /**
-     * @param array $records
-     * @return mixed
+     * @param LogRecord[] $records
+     * @return string[]
      */
-    public function formatBatch(array $records): string
+    public function formatBatch(array $records): array
     {
-        return json_encode(array_map([$this, 'format'], $records));
+        return array_map([$this, 'format'], $records);
     }
 }
