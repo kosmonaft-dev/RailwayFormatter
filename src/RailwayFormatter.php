@@ -24,16 +24,15 @@ class RailwayFormatter implements FormatterInterface
             $log[$key] = $value;
         }
 
-        return json_encode($log);
+        return json_encode($log).PHP_EOL;
     }
 
     /**
      * @param LogRecord[] $records
-     * @return string
+     * @return string[]
      */
-    public function formatBatch(array $records): string
+    public function formatBatch(array $records): array
     {
-        $logs = array_map([$this, 'format'], $records);
-        return implode(PHP_EOL, $logs);
+        return array_map([$this, 'format'], $records);
     }
 }
