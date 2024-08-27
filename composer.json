@@ -1,0 +1,20 @@
+{
+  "name": "stein/monolog-railway-formatter",
+  "description": "A Monolog extension for formatting log entries for Railway.app",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alexandre Debusschère",
+      "email": "alexandre@kosmonaft.dev"
+    }
+  ],
+  "require": {
+    "php": ">=8.1",
+    "monolog/monolog": "^3.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Stein\\Monolog\\Formatter\\": "src/"
+    }
+  }
+}
