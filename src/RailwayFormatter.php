@@ -5,6 +5,10 @@ namespace Stein\Monolog\Formatter;
 use Monolog\Formatter\FormatterInterface;
 use Monolog\LogRecord;
 
+/**
+ * Formats a log message according to the Railway log format.
+ * @see https://docs.railway.app/guides/logs#structured-logs
+ */
 class RailwayFormatter implements FormatterInterface
 {
 

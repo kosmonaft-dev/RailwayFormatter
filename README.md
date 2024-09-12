@@ -21,10 +21,10 @@ use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Stein\Monolog\Formatter\RailwayFormatter;
 
-$logger = new Logger('MyLogger');
-$handler = new StreamHandler('php://stdout', Level::Debug);
-$handler->setFormatter(new RailwayFormatter());
-$logger->pushHandler($handler);
+$logger = new Logger('MyLogger', [
+    new StreamHandler('php://stderr', Level::Error, false),
+    new StreamHandler('php://stdout', Level::Debug)
+])->setFormatter(new RailwayFormatter());
 ```
 
 ## License
